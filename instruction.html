@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play - Math Challenge</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #0f4d7d;
+        }
+        ol {
+            text-align: left;
+            padding-left: 50px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        a.button {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        a.button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How to Play</h1>
+        <ol>
+            <li>Click the "Start" button below to go to the topic selection page.</li>
+            <li>Choose any topic from Engineering Mathematics 3 or 4 to begin the quiz.</li>
+            <li>Answer all the multiple-choice questions. Your time starts as soon as the quiz loads.</li>
+            <li>After submitting, you will see your final score and the time you took.</li>
+            <li>For any incorrect answers, click "View Explanation" to see the detailed solution.</li>
+        </ol>
+        <div class="button-container">
+            <a href="{{ url_for('topic_selection') }}" class="button">Start the Challenge!</a>
+        </div>
+    </div>
+</body>
+</html>
