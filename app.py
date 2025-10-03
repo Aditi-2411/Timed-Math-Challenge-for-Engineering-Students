@@ -568,6 +568,9 @@ questions_by_topic = {
 
 }
 
+@app.route("/instructions")
+def instructions():
+    return render_template("instruction.html")
 # Dictionary to store recent results of the user
 recent_results = {}
 
