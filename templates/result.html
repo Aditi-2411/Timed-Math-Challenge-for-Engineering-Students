@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+        .button-container button, .button-container a button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button-container button:hover, .button-container a button:hover {
+            background-color: #45a049;
+        }
+        .feedback-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feedback-item {
+            margin-bottom: 20px;
+        }
+        .feedback-item .question {
+            font-weight: bold;
+        }
+        .feedback-item .answer {
+            font-weight: bold;
+        }
+        .feedback-item .correct {
+            color: green;
+        }
+        .feedback-item .wrong {
+            color: red;
+        }
+        .explanation {
+            display: none; /* Hide explanation by default */
+        }
+        .explanation-toggle {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleExplanation(index) {
+            var explanation = document.getElementById('explanation-' + index);
+            if (explanation.style.display === 'none') {
+                explanation.style.display = 'block';
+            } else {
+                explanation.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Challenge Results</h1>
+    <p>Your score: {{ score }} / {{ total }}</p>
+    <p>Time taken: {{ elapsed_time }} seconds</p>
+
+    <h2>Feedback:</h2>
+    <ul class="feedback-list">
+        {% for item in feedback %}
+            <li class="feedback-item">
+                <span class="question">Question: {{ item.question | safe }}</span><br>
+                <span class="answer">Your answer:<br> {{ item.user_answer | safe }}</span><br>
+                {% if item.correct %}
+                    <span class="correct">Correct!</span>
+                {% else %}
+                    <span class="wrong">Wrong!</span> The correct answer is:<br> {{ item.correct_answer | safe }}<br>
+                    <span class="explanation" id="explanation-{{ loop.index }}" style="display: none;">{{ item.explanation | safe }}</span>
+                    <span class="explanation-toggle" onclick="toggleExplanation({{ loop.index }})">View Explanation</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <div class="button-container">
+        <a href="{{ url_for('back_to_questions', topic=topic) }}"><button>Back to Questions</button></a>
+        <a href="{{ url_for('index') }}"><button>Back to Home</button></a>
+        <a href="{{ url_for('exit_quiz') }}"><button>Exit</button></a>
+    </div>
+
+    <script>
+        // JavaScript function for toggling explanation visibility
+        function toggleExplanation(index) {
+            var explanation = document.getElementById('explanation-' + index);
+            if (explanation.style.display === 'none') {
+                explanation.style.display = 'block';
+            } else {
+                explanation.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Math Challenge</h1>
+    <form method="post" action="{{ url_for('quiz', topic=topic) }}">
+        <input type="hidden" name="start_time" value="{{ start_time }}">
+        {% for index, question in questions %}
+            <p>{{ question["question"] | safe }}</p> <!-- Use safe filter for question -->
+            {% for option in question["options"] %}
+                <input type="radio" name="answer_{{ topic }}_{{ index }}" value="{{ option | safe }}" required> {{ option | safe }}<br> <!-- Use safe filter for option -->
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+

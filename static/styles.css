@@ -1,0 +1,11 @@
+.question {
+    white-space: pre; /* Preserve consecutive spaces */
+}
+
+.ltque1 {
+    white-space: pre;
+}
+
+.answer {
+    white-space: pre;
+}

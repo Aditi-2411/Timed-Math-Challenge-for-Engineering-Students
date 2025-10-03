@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge</title>
+    <style>
+        /* CSS for styling the container */
+        .container {
+            position: relative;
+            text-align: center;
+            color: #ffffff; /* Text color */
+        }
+
+        /* CSS for styling the background image */
+        .background-image {
+            position: absolute;
+            top: -8%;
+            left: 0;
+            width: 100%;
+            height: 665px;
+            z-index: -1;
+            filter: brightness(50%); /* Adjust the brightness of the image */
+        }
+
+        /* CSS for styling the tables */
+        .topics-table {
+            border-collapse: collapse;
+            width: 400px; /* Fixed width for both tables */
+            display: inline-block;
+            vertical-align: top;
+            table-layout: fixed; /* Set table layout to fixed */
+        }
+        .topics-table th, .topics-table td {
+            border: 2px solid #dddddd; /* Thickening the table lines */
+            text-align: left;
+            padding: 8px;
+            color: #000000; /* Text color */
+             /* Display ellipsis for overflow */
+        }
+        .topics-table th {
+            background-color: #f2f2f2;
+        }
+        .topics-table caption {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 8px;
+            white-space: nowrap; /* Prevent wrapping */
+        }
+        .topics-table a {
+            color: #ffffff; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        .topics-table a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.freepik.com/free-photo/workplace-with-blue-office-supplies_23-2147843328.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1710547200&semt=ais" alt="Background Image" class="background-image" height="1500px">
+        <h2><p style="color: #000000;">Choose a topic:</p></h2>
+        <table class="topics-table">
+           <caption><b>Engineering Mathematics 3</b></caption>
+            <tr>
+                <th>Topic</th>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='laplaceTransform') }}">Laplace Transform</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='InverseLaplaceTransform') }}">Inverse Laplace Transform&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+            </tr>
+            
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='ComplexVariables') }}">Complex Variables</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='StatisticalTechniques') }}">Statistical Techniques</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='Probability') }}">Probability</a></td>
+            </tr>
+        </table>
+        
+        <table class="topics-table">
+            <caption><b>Engineering Mathematics 4</b></caption>
+            <tr>
+                <th>Topic</th>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='LinearAlgebra(Theory of Matrices)') }}">Linear Algebra(Theory of Matrices)</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='ComplexIntegration') }}">Complex Integration</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='ZTransform') }}">Z Transform</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='ProbabilityDistributionandSamplingTheory') }}">Probability Distribution and Sampling Theory</a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('quiz', topic='LinearProgrammingProblems') }}">Linear Programming Problems</a></td>
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
