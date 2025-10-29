@@ -568,8 +568,8 @@ questions_by_topic = {
 
 }
 
-@app.route("/instructions")
-def instructions():
+@app.route("/instruction")
+def instruction():
     return render_template("instruction.html")
 # Dictionary to store recent results of the user
 recent_results = {}
@@ -661,6 +661,7 @@ def topic_selection():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
